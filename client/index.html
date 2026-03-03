@@ -83,22 +83,25 @@
     <!-- Lists -->
     <section class="card">
         <div class="row" style="margin-bottom:12px; flex-wrap:wrap;">
-    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Total</small>
+    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Total Reports</small>
       <h2 style="margin:0;" id="statTotal">0</h2>
     </div>
-    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Lost</small>
+    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Lost Reports</small>
       <h2 style="margin:0;" id="statLost">0</h2>
     </div>
-    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Found</small>
+    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Found Reports</small>
       <h2 style="margin:0;" id="statFound">0</h2>
     </div>
-    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Active</small>
+    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Active Reports</small>
       <h2 style="margin:0;" id="statActive">0</h2>
     </div>
   </div>
       <h2 id="listTitle">All Reports</h2>
       <label>Search</label>
       <input id="search" placeholder="Search by title, location, description..." />
+      <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn btn-ghost" type="button" id="clearSearch">Clear Search</button>
+      </div>
       <p class="section-note" style="margin:8px 0 0;">
         Search updates live as you type.
       </p>

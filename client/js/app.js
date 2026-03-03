@@ -7,6 +7,7 @@ const statLost = document.getElementById("statLost");
 const statFound = document.getElementById("statFound");
 const statActive = document.getElementById("statActive");
 const searchEl = document.getElementById("search");
+const clearSearchBtn = document.getElementById("clearSearch");
 
 let allItems = [];
 let searchText = "";
@@ -108,6 +109,12 @@ function setFilter(filter) {
 
 searchEl.addEventListener("input", () => {
   searchText = searchEl.value.trim();
+  fetchItems();
+});
+
+clearSearchBtn.addEventListener("click", () => {
+  searchEl.value = "";
+  searchText = "";
   fetchItems();
 });
 
