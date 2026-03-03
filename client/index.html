@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Lost & Found</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <h1>Campus Lost & Found</h1>
+        <small>Submit reports • Track status • Safe & centralized</small>
+      </div>
+    </div>
+    <a class="btn btn-ghost" href="index.html">Home</a>
+  </div>
+</header>
+
+  <main class="container grid">
+    <!-- Form -->
+    <section class="card">
+      <h2>Submit Report</h2>
+
+      <form id="itemForm">
+        <label>Title</label>
+        <input id="title" name="title" placeholder="e.g., Black Wallet" required minlength="3" maxlength="120"/>
+
+        <label>Description</label>
+        <textarea id="description" name="description" placeholder="Describe the item clearly..." required minlength="5"></textarea>
+
+        <div class="row">
+          <div>
+            <label>Category</label>
+            <select id="category" name="category" required>
+              <option value="Lost">Lost</option>
+              <option value="Found">Found</option>
+            </select>
+          </div>
+          <div>
+            <label>Status</label>
+            <input value="Active" disabled />
+          </div>
+        </div>
+
+        <label>Location</label>
+        <input id="location" name="location" placeholder="e.g., Library Level 2" required />
+
+        <div class="row">
+          <div>
+            <label>Date</label>
+            <input id="date" name="date" type="date" required />
+          </div>
+          <div>
+            <label>Contact Information</label>
+            <input id="contact" name="contact" placeholder="Phone / Email" required />
+          </div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:10px;">
+          <button class="btn btn-primary" type="submit">Submit</button>
+          <button class="btn btn-ghost" type="reset">Clear</button>
+        </div>
+
+        <div id="formMsg" class=""></div>
+      </form>
+
+      <hr style="margin:16px 0; border:0; border-top:1px solid #e5e7eb;" />
+
+      <h2>Quick Filters</h2>
+      <div class="tabs">
+        <button class="btn btn-ghost" data-filter="All" id="filterAll">All</button>
+        <button class="btn btn-ghost" data-filter="Lost" id="filterLost">Lost</button>
+        <button class="btn btn-ghost" data-filter="Found" id="filterFound">Found</button>
+      </div>
+
+      <small>Tip: Click an item to view details, update status, or delete.</small>
+    </section>
+
+    <!-- Lists -->
+    <section class="card">
+        <div class="row" style="margin-bottom:12px; flex-wrap:wrap;">
+    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Total</small>
+      <h2 style="margin:0;" id="statTotal">0</h2>
+    </div>
+    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Lost</small>
+      <h2 style="margin:0;" id="statLost">0</h2>
+    </div>
+    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Found</small>
+      <h2 style="margin:0;" id="statFound">0</h2>
+    </div>
+    <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:12px; flex:1; min-width:180px;">      <small class="section-note">Active</small>
+      <h2 style="margin:0;" id="statActive">0</h2>
+    </div>
+  </div>
+      <h2 id="listTitle">All Reports</h2>
+      <label>Search</label>
+      <input id="search" placeholder="Search by title, location, description..." />
+      <p class="section-note" style="margin:8px 0 0;">
+        Search updates live as you type.
+      </p>
+      <div style="height:10px;"></div>
+      <div id="list" class="list"></div>
+      <div id="listMsg" class=""></div>
+    </section>
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
