@@ -17,13 +17,21 @@ app.use(express.urlencoded({ extended: true }));
 
 // Performance: cache static assets for faster repeat loads
 app.use((req, res, next) => {
-  res.setHeader("Cache-Control", "public, max-age=86400"); // 1 day
+  // Never cache API responses
+  if (req.path.startsWith("/api/")) {
+    res.setHeader("Cache-Control", "no-store");
+    return next();
+  }
   next();
 });
 
-
-// serve client folder later
-app.use(express.static(path.join(__dirname, "../../client")));
+// serve client folder ("/" serves index.html; home.html is served as a static file)
+app.use(
+  express.static(path.join(__dirname, "../../client"), {
+    maxAge: "1d",
+    etag: true,
+  })
+);
 
 // api
 app.use("/api/items", itemsRoutes);

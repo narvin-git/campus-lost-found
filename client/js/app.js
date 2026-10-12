@@ -61,7 +61,7 @@ async function fetchItems() {
   listMsg.textContent = "";
   listMsg.className = "";
 
-  const res = await fetch("/api/items");
+  const res = await fetch("/api/items", { cache: "no-store" });
   const items = await res.json();
 
   if (!Array.isArray(items)) {

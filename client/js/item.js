@@ -21,7 +21,7 @@ async function loadItem() {
   msgEl.textContent = "";
   msgEl.className = "";
 
-  const res = await fetch(`/api/items/${id}`);
+  const res = await fetch(`/api/items/${id}`, { cache: "no-store" });
   const it = await res.json();
 
   if (!res.ok) {
