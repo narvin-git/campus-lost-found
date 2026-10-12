@@ -9,6 +9,7 @@ const { notFound, errorHandler } = require("./middleware/error.middleware");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || "0.0.0.0";
 
 // middleware required :[oaicite:2]{index=2}
 app.use(helmet());
@@ -45,4 +46,6 @@ app.use((req, res) => {
 });
 app.use(errorHandler);
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
+});
