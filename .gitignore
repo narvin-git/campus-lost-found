@@ -8,3 +8,9 @@ npm-debug.log*
 # OS / editor
 .DS_Store
 .vscode/
+
+# Local database backups / dumps (contain real data)
+backup.sql
+backup.sql.tmp
+*.dump.sql
+campus_lost_found_dump.sql

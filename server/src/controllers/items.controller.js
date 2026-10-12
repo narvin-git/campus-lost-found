@@ -1,4 +1,5 @@
 const pool = require("../db");
+const { triggerBackup } = require("../utils/autoBackup");
 
 async function createItem(req, res, next) {
   try {
@@ -10,6 +11,7 @@ async function createItem(req, res, next) {
       [title, description, category, location, date, contact]
     );
 
+    triggerBackup("INSERT");
     res.status(201).json({ message: "Item created", id: result.insertId });
   } catch (err) {
     next(err);
@@ -59,6 +61,7 @@ async function updateItemStatus(req, res, next) {
     );
 
     if (result.affectedRows === 0) return res.status(404).json({ message: "Item not found" });
+    triggerBackup("UPDATE");
     res.json({ message: "Status updated" });
   } catch (err) {
     next(err);
@@ -71,6 +74,7 @@ async function deleteItem(req, res, next) {
     const [result] = await pool.execute("DELETE FROM items WHERE id = ?", [id]);
 
     if (result.affectedRows === 0) return res.status(404).json({ message: "Item not found" });
+    triggerBackup("DELETE");
     res.json({ message: "Item deleted" });
   } catch (err) {
     next(err);
