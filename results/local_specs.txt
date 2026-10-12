@@ -1,0 +1,36 @@
+﻿LOCAL MACHINE SPECIFICATIONS
+Captured: 2026-10-12 17:27:18
+
+== CPU ==
+Model:            Intel(R) Core(TM) i7-10700F CPU @ 2.90GHz
+Physical cores:   8
+Logical threads:  16
+Base clock:       2904 MHz
+
+== Memory ==
+Total RAM:        15.9 GB
+Modules:
+  8 GB @ 2933 MHz (Kingston)
+  8 GB @ 2933 MHz (Kingston)
+
+== Storage ==
+Physical disks:
+  KINGSTON SNV3S2000G | SSD | 1863 GB
+  KINGSTON SA2000M8500G | SSD | 466 GB
+Volumes:
+  C: 465 GB total, 259 GB free
+  D: 1863 GB total, 1294 GB free
+
+== Operating system ==
+OS:               Microsoft Windows 11 Pro
+Version / build:  10.0.22621 (build 22621)
+Architecture:     64-bit
+
+== Device ==
+Manufacturer:     ASUS
+Model:            System Product Name
+
+== Software stack ==
+Node.js:          v24.13.0
+MySQL Server:     MySQL80 (Running)
+Apache (XAMPP):   Server version: Apache/2.4.58 (Win64)

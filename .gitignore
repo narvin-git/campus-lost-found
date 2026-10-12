@@ -14,3 +14,10 @@ backup.sql
 backup.sql.tmp
 *.dump.sql
 campus_lost_found_dump.sql
+
+# FA report working docs (kept out of the public repo)
+FINDINGS.md
+report_skeleton.md
+results/cost_inputs.md
+EVIDENCE_CHECKLIST.md
+RUNBOOK.md
