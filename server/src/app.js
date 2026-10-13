@@ -15,7 +15,15 @@ const HOST = process.env.HOST || "0.0.0.0";
 const RATE_LIMIT_MAX = Number(process.env.RATE_LIMIT_MAX) || 0;
 
 // middleware required :[oaicite:2]{index=2}
-app.use(helmet());
+// Keep Helmet's default CSP except upgrade-insecure-requests, which makes browsers
+// fetch CSS/JS over https and breaks plain-HTTP access via a LAN IP (phone test)
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: { upgradeInsecureRequests: null },
+    },
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
